@@ -7,9 +7,9 @@ const stages = require("./stages");
 venom.create().then((client) => start(client));
 function start(client) {
   client.onMessage((message) => {
-    if (message.body === 'Hi') {
-      client.sendText(message.from, 'Oi Sou Jarvi bot em programação para whatsapp 🕷');
-    }
+   client.sendText(message.from, 
+   stages.step[getStage("554491831196@c.us")].obj.execute());
+   
   });
 }
 

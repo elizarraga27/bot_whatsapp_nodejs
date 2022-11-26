@@ -1,5 +1,5 @@
 var banco = {
-    user1:{
+    "554491831196@c.us":{
         stage:0
     },
     user2:{
