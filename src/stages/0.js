@@ -1,8 +1,8 @@
 const cardapio = require("../cardapio");
+const banco = require("../banco");
 
 
-
-function execute(){
+function execute(user, msg){
     let menu = " CARDAPIO \n\n";
 
     Object.keys(cardapio.menu).forEach((value) => {
@@ -10,7 +10,11 @@ function execute(){
         menu += `${value} - ${element.descricao}         R$ ${element.preco} \n`;
     });
 
-    return ["olá sou assistente virtual", menu];
+    banco.db[user].stage = 1
+
+    return ["olá sou assistente virtual, irei apresentar o cardapio, para fazer o pedido basta enviar o codigo do produto",
+     menu,
+    ];
 }
 
 exports.execute = execute;
